@@ -52,10 +52,15 @@
                 </executions>
                 <configuration>
                     <schemaLanguage>WSDL</schemaLanguage>
-                    <generatePackage>hello.wsdl</generatePackage>
+                    <generatePackage>jaxb.generated</generatePackage>
                     <schemas>
                         <schema>
-                            <url>http://localhost:8080/ws/countries.wsdl</url>
+                            <fileset>
+                                <directory>${basedir}/src/main/resources/wsdl</directory>
+                                <includes>
+                                    <include>*.wsdl</include>
+                                </includes>
+                            </fileset>
                         </schema>
                     </schemas>
                 </configuration>
